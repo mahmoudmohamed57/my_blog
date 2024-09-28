@@ -31,11 +31,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-552!sbp8=_)072$8_#z1u4bw9%z@hb!ci5ml%xu(2j$$ehz4!4'
 SECRET_KEY = config('SECRET_KEY', 'django-insecure-552!sbp8=_)072$8_#z1u4bw9%z@hb!ci5ml%xu(2j$$ehz4!4')
-DEBUG = config('DEBUG', default="True") == 'True'
+DEBUG = False
 # DEBUG = True
 
 
-ALLOWED_HOSTS = ["146.190.167.129", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = [*]
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1').split(',')
 
 
@@ -99,9 +99,9 @@ else:
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USERNAME'),
-        'PASSWORD': config('DB_PASSWORD'),
+        'NAME': 'newdb',
+        'USER': 'newuser',
+        'PASSWORD': 'newpassword',
         'HOST': 'localhost',
         'PORT': '', 
     }
